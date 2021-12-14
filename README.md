@@ -1,4 +1,4 @@
-# quiknode-bug
+# quicknode-bug
 
 ### Requirements
 
