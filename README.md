@@ -5,7 +5,7 @@
 - NodeJS
 - A `.env` file in with QUICKNODE_URL set
 
-e.g. `QUCIKNODE_URL=https://lingering-wispy-pine.quiknode.pro/<KEY-HERE>`
+e.g. `QUICKNODE_URL=https://lingering-wispy-pine.quiknode.pro/<KEY-HERE>`
 
 ### Run the code
 
