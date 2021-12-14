@@ -3,9 +3,9 @@
 ### Requirements
 
 - NodeJS
-- A `.env` file in with QUIKNODE_URL set
+- A `.env` file in with QUICKNODE_URL set
 
-e.g. `QUIKNODE_URL=https://lingering-wispy-pine.quiknode.pro/<KEY-HERE>`
+e.g. `QUCIKNODE_URL=https://lingering-wispy-pine.quiknode.pro/<KEY-HERE>`
 
 ### Run the code
 
