@@ -1,6 +1,6 @@
 const ethers = require("ethers")
 
-const nodeHttpUrl = process.env.QUIKNODE_URL
+const nodeHttpUrl = process.env.QUICKNODE_URL
 
 const ensAddress = "0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5"
 const ensContractAbi = ["function available(string name) view returns (bool)"]
