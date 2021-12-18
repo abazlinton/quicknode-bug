@@ -1,6 +1,7 @@
 
 const ethers = require("ethers")
 const cliProgress = require('cli-progress');
+const fs = require('fs');
 
 
 const nodeHttpUrl = process.env.QUICKNODE_URL
