@@ -48,7 +48,10 @@ function sleep(time) {
     bar.update(++numberofResults);
     return await ensContract.available(domain)
       .then(res => ({ domain, isAvailable: res, didFail: false }))
-      .catch(err => ({ domain, isAvailable: false, didFail: true }))
+      .catch(err => {
+        console.log(err)
+        return { domain, isAvailable: false, didFail: true }
+      })
   })
 
   const results = await Promise.all(promises)
