@@ -43,8 +43,8 @@ function sleep(time) {
 
   // stop the progress bar
   let numberofResults = 0
-  const promises = domains.map(async (domain, index) => {
-    await sleep(index * 5);
+  const promises = domains.slice(0, 100).map(async (domain, index) => {
+    await sleep(index * 20);
     bar.update(++numberofResults);
     return await ensContract.available(domain)
       .then(res => ({ domain, isAvailable: res, didFail: false }))
