@@ -60,7 +60,6 @@ function sleep(time) {
   const onlyAvailableDomains = responses.filter(res => res.isAvailable)
   bar.stop();
   console.log(fails.length, responses.length)
-  console.log(onlyAvailableDomains)
-  fs.writeFileSync("./results.json", JSON.stringify(onlyAvailableDomains))
+  fs.writeFileSync("./results.json", JSON.stringify(onlyAvailableDomains.map(d => d.domain)))
 
 })()
