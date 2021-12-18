@@ -2,6 +2,8 @@ const ethers = require("ethers")
 
 const nodeHttpUrl = process.env.QUICKNODE_URL
 
+console.log(nodeHttpUrl)
+
 const ensAddress = "0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5"
 const ensContractAbi = ["function available(string name) view returns (bool)"]
 
@@ -18,6 +20,7 @@ Array.from({ length: 30 }).forEach(async (_, index) => {
   try {
     // is the domain blo.eth available?
     const isAvailable = await ensContract.available("blo")
+    // console.log(isAvailable)
     console.log(isAvailable ? "blo is available to register" : "blo is already registered")
   } catch (error) {
     console.log(error)
