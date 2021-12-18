@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config index.js"
+    "start": "node -r dotenv/config index.js",
+    "three": "node -r dotenv/config 3letter.js"
   },
   "keywords": [],
   "author": "",
