@@ -18,4 +18,4 @@ const allfiveLetterWords = fiveLetterNames.concat(fiveLetterWords);
 // console.dir(availableNames, { maxArrayLength: null })
 
 
-console.dir(allfiveLetterWords.length)
+fs.writeFileSync('five.json', fiveLetterNames.toString())
