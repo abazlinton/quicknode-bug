@@ -3,7 +3,6 @@ const ethers = require("ethers")
 const cliProgress = require('cli-progress');
 const fs = require('fs');
 
-
 const nodeHttpUrl = process.env.QUICKNODE_URL
 
 const ensAddress = "0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5"
@@ -14,7 +13,6 @@ const ensContract = new ethers.Contract(ensAddress, ensContractAbi, provider)
 const lettersString = "abcdefghijklmnopqrstuvwxyz"
 const letters = lettersString.split("")
 const domains = []
-
 
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time))
@@ -43,7 +41,7 @@ function sleep(time) {
 
   // stop the progress bar
   let numberofResults = 0
-  const promises = domains.map(async (domain, index) => {
+  const promises = domains.slice(0, 100).map(async (domain, index) => {
     await sleep(index * 5);
     bar.update(++numberofResults);
     return await ensContract.available(domain)
@@ -60,6 +58,7 @@ function sleep(time) {
   const onlyAvailableDomains = responses.filter(res => res.isAvailable)
   bar.stop();
   console.log(fails.length, responses.length)
-  fs.writeFileSync("./results.json", JSON.stringify(onlyAvailableDomains.map(d => d.domain)))
+  const onlyDomainNames = onlyAvailableDomains.map(d => d.domain)
+  fs.writeFileSync("./results.json", JSON.stringify(onlyDomainNames))
 
 })()
