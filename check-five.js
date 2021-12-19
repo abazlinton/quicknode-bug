@@ -1,7 +1,7 @@
 const ethers = require("ethers")
 const cliProgress = require('cli-progress');
 const fs = require('fs');
-const fiveLetterWords = fs.readFileSync('five.json')
+const fiveLetterWords = fs.readFileSync('five.json').toString()
 
 
 const nodeHttpUrl = process.env.QUICKNODE_URL
